@@ -1,7 +1,6 @@
 <?php
-
-    class Controllers {
-
+    class Controllers 
+    {
         protected $model;
         protected $views;
 
@@ -24,5 +23,4 @@
         }
 
     }
-
 ?>
