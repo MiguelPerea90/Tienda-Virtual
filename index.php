@@ -1,5 +1,6 @@
 <?php
     require_once("Config/Config.php");
+    require_once("Helpers/Helpers.php");
     $url = !empty($_GET['url']) ? htmlspecialchars($_GET['url'], ENT_QUOTES, 'UTF-8') : 'home/home';
     $arrUrl = explode("/", $url);
     $controller = $arrUrl[0];
@@ -26,7 +27,4 @@
 
     // 5.Controladores y vistas. video completo
     // Plantilla - Framework lista para cualquier proyecto
-
-
-    // 7.video 7:42 mins
 ?>
