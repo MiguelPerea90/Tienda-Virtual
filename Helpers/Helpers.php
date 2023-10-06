@@ -1,23 +1,25 @@
-<?php
+<?php 
 
-    // Retorna la url del proyecto
-    function baseUrl()
+	//Retorla la url del proyecto
+	function base_url()
+	{
+		return BASE_URL;
+	}
+    //Retorla la url del Assets
+    function media()
     {
-        return BASE_URL;
+        return BASE_URL."/Assets";
     }
-
-    // Muestra información formateada
-    function dep($data)
+	//Muestra información formateada
+	function dep($data)
     {
-        $format = print_r('<pre>');
+        $format  = print_r('<pre>');
         $format .= print_r($data);
         $format .= print_r('</pre>');
         return $format;
     }
-
-    // Elimina el exceso de espacios entre palabras
-    function strClean($strCadena)
-    {
+    //Elimina exceso de espacios entre palabras
+    function strClean($strCadena){
         $string = preg_replace(['/\s+/','/^\s|\s$/'],[' ',''], $strCadena);
         $string = trim($string); //Elimina espacios en blanco al inicio y al final
         $string = stripslashes($string); // Elimina las \ invertidas
@@ -49,7 +51,6 @@
         $string = str_ireplace("==","",$string);
         return $string;
     }
-
     //Genera una contraseña de 10 caracteres
 	function passGenerator($length = 10)
     {
@@ -65,7 +66,6 @@
         }
         return $pass;
     }
-
     //Genera un token
     function token()
     {
@@ -76,11 +76,11 @@
         $token = $r1.'-'.$r2.'-'.$r3.'-'.$r4;
         return $token;
     }
-
     //Formato para valores monetarios
     function formatMoney($cantidad){
         $cantidad = number_format($cantidad,2,SPD,SPM);
         return $cantidad;
     }
+    
 
-?>
+ ?>

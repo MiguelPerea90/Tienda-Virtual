@@ -1,18 +1,17 @@
-<?php
-    // Página principal del proyecto
-    class Errors extends Controllers 
-    {
-        public function __construct()
-        {
-            parent::__construct();
-        }
+<?php 
 
-        public function notFound() 
-        {
-            $this->views->getView($this, "Error"); 
-        }
-    }
+	class Errors extends Controllers{
+		public function __construct()
+		{
+			parent::__construct();
+		}
 
-    $notFound = new Errors();
-    $notFound->notFound();
-?>
+		public function notFound()
+		{
+			$this->views->getView($this,"error");
+		}
+	}
+
+	$notFound = new Errors();
+	$notFound->notFound();
+ ?>
