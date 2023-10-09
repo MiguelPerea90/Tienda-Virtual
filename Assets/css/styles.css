@@ -3,3 +3,16 @@
     background-color: gray;
     padding: 6px;
 }
+.app-sidebar__toggle {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.app-sidebar__toggle::before {
+    display: none;
+}
