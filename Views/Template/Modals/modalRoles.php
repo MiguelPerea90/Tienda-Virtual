@@ -39,12 +39,16 @@
 
                             <div class="form-group">
                                 <label for="exampleSelect1">Estado</label>
-                                <select class="form-control" id="listStatus" name="listStatus" required>
+                                <select class="form-control" 
+                                    id="listStatus" 
+                                    name="listStatus" 
+                                    required
+                                >
                                     <option value="1">Activo</option>
                                     <option value="2">Inactivo</option>
                                 </select>
                             </div>
-
+<!-- VIDEO No. 8 Enviar datos por AJAX con JavaScript - 2:49 mins -->
                             <div class="tile-footer">
                                 <button 
                                     class="btn btn-primary" 

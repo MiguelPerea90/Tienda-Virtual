@@ -28,11 +28,37 @@
 					$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
 				}
 
-				// $arrData[$i]['options'] = '<div class="text-center">
-				// <button class="btn btn-secondary btn-sm btnPermisosRol" rl="'.$arrData[$i]['idrol'].'" title="Permisos"><i class="fas fa-key"></i></button>
-				// <button class="btn btn-primary btn-sm btnEditRol" rl="'.$arrData[$i]['idrol'].'" title="Editar"><i class="fas fa-pencil-alt"></i></button>
-				// <button class="btn btn-danger btn-sm btnDelRol" rl="'.$arrData[$i]['idrol'].'" title="Eliminar"><i class="far fa-trash-alt"></i></button>
-				// </div>';
+				// El for hace el recorrido y coloca el elemento options en cada uno de los elementos.
+				$arrData[$i]['options'] = '  
+				<div class="text-center">
+					<button 
+						class="btn btn-secondary 
+						btn-sm btnPermisosRol" 
+						rl="'.$arrData[$i]['id_rol'].'" 
+						title="Permisos"
+					>
+						<i class="fas fa-key"></i>
+					</button>
+
+					<button 
+						class="btn btn-primary 
+						btn-sm btnEditRol" 
+						rl="'.$arrData[$i]['id_rol'].'" 
+						title="Editar"
+					>
+						<i class="fas fa-pencil-alt"></i>
+					</button>
+					
+					<button 
+						class="btn btn-danger 
+						btn-sm btnDelRol" 
+						rl="'.$arrData[$i]['id_rol'].'" 
+						title="Eliminar"
+					>
+						<i class="far fa-trash-alt"></i>
+					</button>
+				</div>
+				';
 
 			}
 
