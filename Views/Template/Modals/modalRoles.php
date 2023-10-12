@@ -2,16 +2,29 @@
 <div class="modal fade" id="modalFormRol" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Nuevo Rol</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+            <div class="modal-header headerRegister">
+                <h5 class="modal-title" id="titleModal">Nuevo Rol</h5>
+                <button 
+                    type="button" 
+                    class="close" 
+                    data-dismiss="modal" 
+                    aria-label="Close"
+                >
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+
             <div class="modal-body">
                 <div class="tile">
                     <div class="tile-body">
                         <form id="formRol" name="formRol">
+                            <input 
+                                type="hidden" 
+                                id="idRol" 
+                                name="idRol" 
+                                value=""
+                            >
+                            
                             <div class="form-group">
                                 <label class="control-label">Nombre</label>
                                 <input 
@@ -48,17 +61,21 @@
                                     <option value="2">Inactivo</option>
                                 </select>
                             </div>
-<!-- VIDEO No. 8 Enviar datos por AJAX con JavaScript - 2:49 mins -->
+                            
                             <div class="tile-footer">
-                                <button 
+                                <button
+                                    id="btnActionForm" 
                                     class="btn btn-primary" 
                                     type="submit"
                                 >
                                     <i class="fa fa-fw fa-lg fa-check-circle"></i>
-                                    Guardar
+                                    <span id="btnText">Guardar</span>
                                 </button>
                                 &nbsp;&nbsp;&nbsp;
-                                <a class="btn btn-secondary" href="#">
+                                <a 
+                                class="btn btn-secondary" 
+                                href="#" 
+                                data-dismiss="modal">
                                     <i class="fa fa-fw fa-lg fa-times-circle"></i>
                                     Cancelar
                                 </a>

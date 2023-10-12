@@ -12,7 +12,17 @@
     align-items: center;
     font-size: 20px;
 }
-
 .app-sidebar__toggle::before {
+    display: none;
+}
+.headerRegister{
+	background: #009688;
+	color: #FFF;
+}
+.headerUpdate{
+	background: #007bff;
+	color: #FFF;
+}
+.notBlock{
     display: none;
 }

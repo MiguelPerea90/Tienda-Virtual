@@ -46,4 +46,4 @@
                 </li>
             </ul>
         </header>
-        <?php require_once("nav_admin.php"); ?>
+    <?php require_once("nav_admin.php"); ?>
