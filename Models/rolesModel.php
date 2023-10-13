@@ -50,5 +50,47 @@
 			}
 			return $return;
         }
+
+		public function updateRol(int $idrol, string $rol, string $descripcion, int $status){
+			$this->intIdrol = $idrol;
+			$this->strRol = $rol;
+			$this->strDescripcion = $descripcion;
+			$this->intStatus = $status;
+
+			$sql = "SELECT * FROM rol WHERE nombre_rol = '$this->strRol' AND id_rol != $this->intIdrol";
+			$request = $this->select_all($sql);
+
+			if(empty($request))
+			{
+				$sql = "UPDATE rol SET nombre_rol = ?, descripcion = ?, status = ? WHERE id_rol = $this->intIdrol ";
+				$arrData = array($this->strRol, $this->strDescripcion, $this->intStatus);
+				$request = $this->update($sql,$arrData);
+			}else{
+				$request = "exist";
+			}
+		    return $request;			
+		}
+
+		public function deleteRol(int $idrol)
+		{
+			$this->intIdrol = $idrol;
+			$sql = "SELECT * FROM persona WHERE rol_id = $this->intIdrol";
+			$request = $this->select_all($sql);
+			if(empty($request))
+			{
+				$sql = "UPDATE rol SET status = ? WHERE id_rol = $this->intIdrol ";
+				$arrData = array(0);
+				$request = $this->update($sql,$arrData);
+				if($request)
+				{
+					$request = 'ok';	
+				}else{
+					$request = 'error';
+				}
+			}else{
+				$request = 'exist';
+			}
+			return $request;
+		}
 	}
  ?>
