@@ -91,7 +91,7 @@ function openModal() {
 window.addEventListener('load', function() {
     fntEditRol();
     fntDelRol();
-    // fntPermisos();
+    fntPermisos();
 }, false);
 
 function fntEditRol(){
@@ -200,6 +200,46 @@ function fntDelRol() {
         }
     });
 }
+
+function fntPermisos() {
+    document.addEventListener('click', function(event) {
+        var targetElement = event.target; // elemento clickeado
+
+        // Buscar el elemento o ancestro que coincida con .btnPermisosRol
+        while (targetElement !== null) {
+            if (targetElement.matches('.btnPermisosRol')) {
+
+                var idrol = targetElement.getAttribute("rl");
+                var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+                var ajaxUrl = base_url+'/Permisos/getPermisosRol/'+idrol;
+                request.open("GET",ajaxUrl,true);
+                request.send();
+
+                request.onreadystatechange = function(){
+                    if(request.status == 200){
+                        console.log(request.responseText);
+                        document.querySelector('#contentAjax').innerHTML = request.responseText;
+                        $('.modalPermisos').modal('show');
+                    }
+                }
+
+                // request.onreadystatechange = function(){
+                //     if(request.readyState == 4 && request.status == 200){
+                //         document.querySelector('#contentAjax').innerHTML = request.responseText;
+                //         $('.modalPermisos').modal('show');
+                //         document.querySelector('#formPermisos').addEventListener('submit',fntSavePermisos,false);
+                //     }
+                // }
+                
+                
+                return; // Salir del bucle y función después de manejar el evento
+            }
+            targetElement = targetElement.parentElement; // ir al ancestro
+        }
+    });
+}
+
+
 
 
 
