@@ -216,27 +216,41 @@ function fntPermisos() {
                 request.send();
 
                 request.onreadystatechange = function(){
-                    if(request.status == 200){
-                        console.log(request.responseText);
+                    if(request.readyState == 4 && request.status == 200){
                         document.querySelector('#contentAjax').innerHTML = request.responseText;
                         $('.modalPermisos').modal('show');
+                        document.querySelector('#formPermisos').addEventListener('submit',fntSavePermisos,false);
                     }
                 }
-
-                // request.onreadystatechange = function(){
-                //     if(request.readyState == 4 && request.status == 200){
-                //         document.querySelector('#contentAjax').innerHTML = request.responseText;
-                //         $('.modalPermisos').modal('show');
-                //         document.querySelector('#formPermisos').addEventListener('submit',fntSavePermisos,false);
-                //     }
-                // }
-                
                 
                 return; // Salir del bucle y función después de manejar el evento
             }
             targetElement = targetElement.parentElement; // ir al ancestro
         }
     });
+}
+
+function fntSavePermisos(evnet){
+    evnet.preventDefault();
+    var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    var ajaxUrl = base_url+'/Permisos/setPermisos'; 
+    var formElement = document.querySelector("#formPermisos");
+    var formData = new FormData(formElement);
+    request.open("POST",ajaxUrl,true);
+    request.send(formData);
+
+    request.onreadystatechange = function(){
+        if(request.readyState == 4 && request.status == 200){
+            var objData = JSON.parse(request.responseText);
+            if(objData.status)
+            {
+                swal("Permisos de usuario", objData.msg ,"success");
+            }else{
+                swal("Error", objData.msg , "error");
+            }
+        }
+    }
+    
 }
 
 

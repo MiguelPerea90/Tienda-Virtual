@@ -28,6 +28,5 @@
 	}
 	require_once("Libraries/Core/Autoload.php");
 	require_once("Libraries/Core/Load.php");
-
-	// Video 15 Extraer Módulos y Permisos de Usuario - Parte 1. - PARA COMENZAR
+	
  ?>
