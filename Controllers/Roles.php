@@ -115,22 +115,19 @@
 				$option = 2;
 			}
 
-			if($request_rol > 0)
-			{
-				if($option == 1)
-				{
+			if ($request_rol === 'exist') {
+				$arrResponse = array('status' => false, 'msg' => '¡Atención! El Rol ya existe.');
+			} elseif ($request_rol <= 0) {
+				$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
+			} else {
+				if ($option === 1) {
 					$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
-				}else{
+				} else {
 					$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 				}
-
-			} else if($request_rol == 'exist'){
-
-				$arrResponse = array('status' => false, 'msg' => '¡Atención! El Rol ya existe.');
-
-			}else{
-				$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
 			}
+
+			header('Content-Type: application/json');
 			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 			die();
 		}

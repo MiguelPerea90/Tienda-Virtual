@@ -15,7 +15,7 @@
 .app-sidebar__toggle::before {
     display: none;
 }
-.headerRegister{
+.headerRegister, .header-primary{
 	background: #009688;
 	color: #FFF;
 }

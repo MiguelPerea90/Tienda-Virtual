@@ -24,7 +24,7 @@
                 <i class="fa fa-home fa-lg"></i>
             </li>
             <li class="breadcrumb-item">
-                <a href="<?= base_url(); ?>/roles"> 
+                <a href="<?= base_url(); ?>/usuarios"> 
                     <?= $data['page_title'] ?>
                 </a>
             </li>
