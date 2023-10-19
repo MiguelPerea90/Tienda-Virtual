@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         "responsive": true,
         "bDestroy": true,
-        "iDisplayLength": 10,
+        "iDisplayLength": 5,
         "order": [[0, "desc"]]
     });
 
@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-
 $('#tableRoles').DataTable();
 
 function openModal() {
@@ -95,7 +94,6 @@ window.addEventListener('load', function() {
 }, false);
 
 function fntEditRol(){
-
     document.addEventListener('click', function(event){
 
         let targetElement = event.target; // clicked element
@@ -147,7 +145,6 @@ function fntEditRol(){
             targetElement = targetElement.parentElement;
         }
     });    
- 
 }
 
 function fntDelRol() {

@@ -29,5 +29,5 @@
 	require_once("Libraries/Core/Autoload.php");
 	require_once("Libraries/Core/Load.php");
 
-	// Video No. 11 - Eliminar usuarios de la Base de datos - PARA COMENZAR
+	
  ?>

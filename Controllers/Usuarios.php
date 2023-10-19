@@ -90,11 +90,13 @@
 				}
 
 				$arrData[$i]['options'] = '<div class="text-center">
-				<button class="btn btn-info btn-sm btnViewUsuario" us="'.$arrData[$i]['id_persona'].'" 
+				<button class="btn btn-info btn-sm btnViewUsuario" onClick="fntViewUsuario('.$arrData[$i]['id_persona'].')" 
 					title="Ver usuario"><i class="far fa-eye"></i></button>
-				<button class="btn btn-primary btn-sm btnEditUsuario" us="'.$arrData[$i]['id_persona'].'" 
+
+				<button class="btn btn-primary btn-sm btnEditUsuario"  onClick="fntEditUsuario('.$arrData[$i]['id_persona'].')" 
 					title="Editar usuario"><i class="fas fa-pencil-alt"></i></button>
-				<button class="btn btn-danger btn-sm btnDelUsuario" us="'.$arrData[$i]['id_persona'].'" 
+
+				<button class="btn btn-danger btn-sm btnDelUsuario" onClick="fntDelUsuario('.$arrData[$i]['id_persona'].')" 
 					title="Eliminar usuario"><i class="far fa-trash-alt"></i></button>
 				</div>';
 			}
@@ -113,6 +115,22 @@
 					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 				}else{
 					$arrResponse = array('status' => true, 'data' => $arrData);
+				}
+				echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+			}
+			die();
+		}
+
+		public function delUsuario()
+		{
+			if($_POST){
+				$intIdpersona = intval($_POST['idUsuario']);
+				$requestDelete = $this->model->deleteUsuario($intIdpersona);
+				if($requestDelete)
+				{
+					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el usuario');
+				}else{
+					$arrResponse = array('status' => false, 'msg' => 'Error al eliminar el usuario.');
 				}
 				echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
 			}
