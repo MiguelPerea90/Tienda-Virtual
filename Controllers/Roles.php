@@ -30,39 +30,40 @@
 				}
 
 				// El for hace el recorrido y coloca el elemento options en cada uno de los elementos.
-				$arrData[$i]['options'] = '  
-				<div class="text-center">
-					<button 
-						class="btn btn-secondary btn-sm btnPermisosRol" 
-						rl="'.$arrData[$i]['id_rol'].'" 
-						title="Permisos"
-					>
-						<i class="fas fa-key"></i>
-					</button>
+				// $arrData[$i]['options'] = '  
+				// <div class="text-center">
+				// 	<button 
+				// 		class="btn btn-secondary btn-sm btnPermisosRol" 
+				// 		rl="'.$arrData[$i]['id_rol'].'" 
+				// 		title="Permisos"
+				// 	>
+				// 		<i class="fas fa-key"></i>
+				// 	</button>
 
-					<button 
-						class="btn btn-primary btn-sm btnEditRol" 
-						rl="'.$arrData[$i]['id_rol'].'" 
-						title="Editar"
-					>
-						<i class="fas fa-pencil-alt"></i>
-					</button>
+				// 	<button 
+				// 		class="btn btn-primary btn-sm btnEditRol" 
+				// 		rl="'.$arrData[$i]['id_rol'].'" 
+				// 		title="Editar"
+				// 	>
+				// 		<i class="fas fa-pencil-alt"></i>
+				// 	</button>
 					
-					<button 
-						class="btn btn-danger btn-sm btnDelRol" 
-						rl="'.$arrData[$i]['id_rol'].'" 
-						title="Eliminar"
-					>
-						<i class="far fa-trash-alt"></i>
-					</button>
+				// 	<button 
+				// 		class="btn btn-danger btn-sm btnDelRol" 
+				// 		rl="'.$arrData[$i]['id_rol'].'" 
+				// 		title="Eliminar"
+				// 	>
+				// 		<i class="far fa-trash-alt"></i>
+				// 	</button>
+				// </div>
+				// ';
+
+				$arrData[$i]['options'] = '<div class="text-center">
+				<button class="btn btn-secondary btn-sm btnPermisosRol" onClick="fntPermisos('.$arrData[$i]['id_rol'].')" title="Permisos"><i class="fas fa-key"></i></button>
+				<button class="btn btn-primary btn-sm btnEditRol" onClick="fntEditRol('.$arrData[$i]['id_rol'].')" title="Editar"><i <i class="fas fa-pencil-alt"></i></button>
+				<button class="btn btn-danger btn-sm btnDelRol" onClick="fntDelRol('.$arrData[$i]['id_rol'].')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
 				</div>
 				';
-
-				// $arrData[$i]['options'] = '<div class="text-center">
-				// <button class="btn btn-secondary btn-sm btnPermisosRol" onClick="fntPermisos('.$arrData[$i]['idrol'].')" 		title="Permisos"><i class="fas fa-key"></i></button>
-				// <button class="btn btn-primary btn-sm btnEditRol" onClick="fntEditRol('.$arrData[$i]['idrol'].')" title="Editar"><i class="fas fa-pencil-alt"></i></button>
-				// <button class="btn btn-danger btn-sm btnDelRol" onClick="fntDelRol('.$arrData[$i]['idrol'].')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
-				// </div>';
 
 			}
 
