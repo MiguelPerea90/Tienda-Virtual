@@ -29,5 +29,6 @@
 	require_once("Libraries/Core/Autoload.php");
 	require_once("Libraries/Core/Load.php");
 
-	// Video 13. Exportar Lista de Usuarios a Exel, PDF Y CVV - PARA COMENZAR.
+	// video No. 3 Validar Usuario y Contraseña en la Base de Datos - PARA COMENZAR -
+
  ?>

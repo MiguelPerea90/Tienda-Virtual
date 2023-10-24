@@ -13,6 +13,7 @@
 			$data['page_tag'] = "Roles Usuario";
 			$data['page_title'] = "Roles Usuario <small> Tienda Virtual</small>"; 
 			$data['page_name'] = "rol_usuario";
+			$data['page_functions_js'] = "functions-roles.js";
 			$this->views->getView($this,"roles",$data);
 		}
 

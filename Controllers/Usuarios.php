@@ -11,6 +11,7 @@
 			$data['page_tag'] = "Usuarios";
 			$data['page_title'] = "USUARIOS <small>Tienda Virtual</small>";
 			$data['page_name'] = "usuarios";
+			$data['page_functions_js'] = "functions-usuarios.js";
 			$this->views->getView($this,"usuarios",$data);
 		}
 
