@@ -24,6 +24,8 @@
         <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
 
         <script type="text/javascript" src="<?= media(); ?>/js/functions-admin.js"></script>
-        <script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
+        <?php if(isset($data['page_functions_js']) && !empty($data['page_functions_js'])): ?>
+            <script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
+        <?php endif; ?>
     </body>
 </html>

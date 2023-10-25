@@ -29,6 +29,6 @@
 	require_once("Libraries/Core/Autoload.php");
 	require_once("Libraries/Core/Load.php");
 
-	// video No. 3 Validar Usuario y Contraseña en la Base de Datos - PARA COMENZAR -
+	// video No. 5 Datos de Usuario y Variables de Sesión - PARA COMENZAR -
 
  ?>
