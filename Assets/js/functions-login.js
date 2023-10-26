@@ -42,4 +42,35 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 		}
 	}
+
+	if(document.querySelector("#formRecetPass")){		
+		let formRecetPass = document.querySelector("#formRecetPass");
+		formRecetPass.onsubmit = function(e) {
+			e.preventDefault();
+
+			let strEmail = document.querySelector('#txtEmailReset').value;
+			if(strEmail == "")
+			{
+				swal("Por favor", "Escribe tu correo electrónico.", "error");
+				return false;
+			}else{
+				var request = (window.XMLHttpRequest) ? 
+								new XMLHttpRequest() : 
+								new ActiveXObject('Microsoft.XMLHTTP');
+								
+				var ajaxUrl = base_url+'/Login/resetPass'; 
+				var formData = new FormData(formRecetPass);
+				request.open("POST",ajaxUrl,true);
+				request.send(formData);
+				request.onreadystatechange = function(){
+					console.log(request);
+					if(request.readyState != 4) return;
+					if(request.status == 200){
+						var objData = JSON.parse(request.responseText);
+					}
+				}
+			}
+		}
+	}
+
 }, false);
