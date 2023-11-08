@@ -1,6 +1,7 @@
 <?php 
 
-	class Usuarios extends Controllers{
+	class Usuarios extends Controllers
+	{
 		public function __construct()
 		{
 			session_start();

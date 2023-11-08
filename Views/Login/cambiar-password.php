@@ -23,6 +23,12 @@
             </div>
             
             <div class="login-box flipped">
+                <div id="divLoading" >
+                    <div>
+                        <img src="<?= media(); ?>/images/loading.svg" alt="Loading">
+                    </div>
+                </div>
+                
                 <form id="formCambiarPass" name="formCambiarPass" class="forget-form" action="">
                     <input type="hidden" id="idUsuario" name="idUsuario" value="<?= $data['id_persona']; ?>" required >
                     <input type="hidden" id="txtEmail" name="txtEmail" value="<?= $data['email']; ?>" required >

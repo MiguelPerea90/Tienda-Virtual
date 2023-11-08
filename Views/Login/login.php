@@ -14,14 +14,21 @@
     </head>
     <body>
         <section class="material-half-bg">
-        <div class="cover"></div>
+            <div class="cover"></div>
         </section>
 
         <section class="login-content">
             <div class="logo">
                 <h1><?= $data['page_title']; ?></h1>
             </div>
-            <div class="login-box flipped">
+
+            <div class="login-box">
+                <div id="divLoading" >
+                    <div>
+                        <img src="<?= media(); ?>/images/loading.svg" alt="Loading">
+                    </div>
+                </div>
+
                 <form class="login-form" name="formLogin" id="formLogin" action="">
                     <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>INICIAR SESIÓN</h3>
                     <div class="form-group">
@@ -58,6 +65,7 @@
                 </form>
             </div>
         </section>
+
         <script>
             const base_url = "<?= base_url(); ?>";
         </script>
