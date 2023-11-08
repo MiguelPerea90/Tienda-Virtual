@@ -124,7 +124,25 @@ document.addEventListener('DOMContentLoaded', function(){
 				request.onreadystatechange = function(){
 					if(request.readyState != 4) return;
 					if(request.status == 200){
-						console.log(request.responseText);
+						var objData = JSON.parse(request.responseText);
+						if(objData.status)
+						{
+							swal({
+								title: "",
+								text: objData.msg,
+								type: "success",
+								confirmButtonText: "Iniciar sessión",
+								closeOnConfirm: false,
+							}, function(isConfirm) {
+								if (isConfirm) {
+									window.location = base_url+'/login';
+								}
+							});
+						}else{
+							swal("Atención",objData.msg, "error");
+						}
+					}else{
+						swal("Atención","Error en el proceso", "error");
 					}	
 				}
 			}

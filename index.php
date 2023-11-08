@@ -29,6 +29,6 @@
 	require_once("Libraries/Core/Autoload.php");
 	require_once("Libraries/Core/Load.php");
 
-	// video No. 11 Validar Token y Actualizar Contraseña - PARA COMENZAR -
+	// video No. 14 Implementar Loading en Formularios - PARA COMENZAR -
 
  ?>

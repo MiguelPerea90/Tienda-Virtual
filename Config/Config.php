@@ -20,6 +20,12 @@
 	//Simbolo de moneda
 	const SMONEY = "COP";
 
+	//Datos envio de correo
+	const NOMBRE_REMITENTE = "Tienda Virtual";
+	const EMAIL_REMITENTE = "no-reply@abelosh.com";
+	const NOMBRE_EMPESA = "Tienda Virtual";
+	const WEB_EMPRESA = "www.miguelPerea.com";
+
 	
 
 
