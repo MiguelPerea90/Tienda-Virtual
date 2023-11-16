@@ -29,6 +29,6 @@
 	require_once("Libraries/Core/Autoload.php");
 	require_once("Libraries/Core/Load.php");
 
-	// video No. 17 Extraer Modulos, Permisos y Roles de Usuario - PARA COMENZAR -
+	// video No. 19 configuración de Accesos Parte 1 - PARA COMENZAR -
 
  ?>
